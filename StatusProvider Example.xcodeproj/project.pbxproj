@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		844E51EFE09A6D80FBFBBE92 /* Pods_StatusProvider_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2844CA6CEDC8F8F4C70FB1E7 /* Pods_StatusProvider_Example.framework */; };
-		9563899B275CB99700E0C036 /* SimpleAvtivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563899A275CB99700E0C036 /* SimpleAvtivityIndicatorView.swift */; };
+		9563899D275DF13C00E0C036 /* SimpleAvtivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563899C275DF13C00E0C036 /* SimpleAvtivityIndicatorView.swift */; };
 		972645CB1EE017E6007D9C88 /* StatusProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 972645BB1EE017E6007D9C88 /* StatusProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		972645CE1EE017E6007D9C88 /* StatusProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972645B91EE017E5007D9C88 /* StatusProvider.framework */; };
 		972645CF1EE017E6007D9C88 /* StatusProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 972645B91EE017E5007D9C88 /* StatusProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -50,7 +50,7 @@
 /* Begin PBXFileReference section */
 		1DB1BE470E215FFFD1EC3155 /* Pods-StatusProvider Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatusProvider Example.debug.xcconfig"; path = "Target Support Files/Pods-StatusProvider Example/Pods-StatusProvider Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2844CA6CEDC8F8F4C70FB1E7 /* Pods_StatusProvider_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StatusProvider_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9563899A275CB99700E0C036 /* SimpleAvtivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAvtivityIndicatorView.swift; sourceTree = "<group>"; };
+		9563899C275DF13C00E0C036 /* SimpleAvtivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleAvtivityIndicatorView.swift; path = StatusProvider/SimpleAvtivityIndicatorView.swift; sourceTree = "<group>"; };
 		972645B91EE017E5007D9C88 /* StatusProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StatusProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		972645BB1EE017E6007D9C88 /* StatusProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusProvider.h; sourceTree = "<group>"; };
 		972645BC1EE017E6007D9C88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,11 +108,11 @@
 		972645BA1EE017E6007D9C88 /* StatusProvider */ = {
 			isa = PBXGroup;
 			children = (
+				9563899C275DF13C00E0C036 /* SimpleAvtivityIndicatorView.swift */,
 				972645D71EE01904007D9C88 /* DefaultStatusView.swift */,
 				972645D81EE01904007D9C88 /* StatusProvider.swift */,
 				972645BB1EE017E6007D9C88 /* StatusProvider.h */,
 				972645BC1EE017E6007D9C88 /* Info.plist */,
-				9563899A275CB99700E0C036 /* SimpleAvtivityIndicatorView.swift */,
 			);
 			path = StatusProvider;
 			sourceTree = "<group>";
@@ -297,8 +297,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				972645DA1EE01904007D9C88 /* StatusProvider.swift in Sources */,
+				9563899D275DF13C00E0C036 /* SimpleAvtivityIndicatorView.swift in Sources */,
 				972645D91EE01904007D9C88 /* DefaultStatusView.swift in Sources */,
-				9563899B275CB99700E0C036 /* SimpleAvtivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
