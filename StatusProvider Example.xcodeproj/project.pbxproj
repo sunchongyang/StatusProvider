@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844E51EFE09A6D80FBFBBE92 /* Pods_StatusProvider_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2844CA6CEDC8F8F4C70FB1E7 /* Pods_StatusProvider_Example.framework */; };
+		9563899B275CB99700E0C036 /* SimpleAvtivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563899A275CB99700E0C036 /* SimpleAvtivityIndicatorView.swift */; };
 		972645CB1EE017E6007D9C88 /* StatusProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 972645BB1EE017E6007D9C88 /* StatusProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		972645CE1EE017E6007D9C88 /* StatusProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972645B91EE017E5007D9C88 /* StatusProvider.framework */; };
 		972645CF1EE017E6007D9C88 /* StatusProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 972645B91EE017E5007D9C88 /* StatusProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -46,11 +48,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1DB1BE470E215FFFD1EC3155 /* Pods-StatusProvider Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatusProvider Example.debug.xcconfig"; path = "Target Support Files/Pods-StatusProvider Example/Pods-StatusProvider Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2844CA6CEDC8F8F4C70FB1E7 /* Pods_StatusProvider_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StatusProvider_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9563899A275CB99700E0C036 /* SimpleAvtivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAvtivityIndicatorView.swift; sourceTree = "<group>"; };
 		972645B91EE017E5007D9C88 /* StatusProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StatusProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		972645BB1EE017E6007D9C88 /* StatusProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusProvider.h; sourceTree = "<group>"; };
 		972645BC1EE017E6007D9C88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		972645D71EE01904007D9C88 /* DefaultStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultStatusView.swift; path = StatusProvider/DefaultStatusView.swift; sourceTree = "<group>"; };
 		972645D81EE01904007D9C88 /* StatusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusProvider.swift; path = StatusProvider/StatusProvider.swift; sourceTree = "<group>"; };
+		ECA30D10314F5F218E0A109F /* Pods-StatusProvider Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatusProvider Example.release.xcconfig"; path = "Target Support Files/Pods-StatusProvider Example/Pods-StatusProvider Example.release.xcconfig"; sourceTree = "<group>"; };
 		F50344D11D70379700B91343 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		F50344D31D7037A100B91343 /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		F50344D51D7037D300B91343 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
@@ -75,12 +81,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				972645CE1EE017E6007D9C88 /* StatusProvider.framework in Frameworks */,
+				844E51EFE09A6D80FBFBBE92 /* Pods_StatusProvider_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08A90101B8FDAB6313CF16FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2844CA6CEDC8F8F4C70FB1E7 /* Pods_StatusProvider_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E65089407AD60FB1E5A2B27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DB1BE470E215FFFD1EC3155 /* Pods-StatusProvider Example.debug.xcconfig */,
+				ECA30D10314F5F218E0A109F /* Pods-StatusProvider Example.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		972645BA1EE017E6007D9C88 /* StatusProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +112,7 @@
 				972645D81EE01904007D9C88 /* StatusProvider.swift */,
 				972645BB1EE017E6007D9C88 /* StatusProvider.h */,
 				972645BC1EE017E6007D9C88 /* Info.plist */,
+				9563899A275CB99700E0C036 /* SimpleAvtivityIndicatorView.swift */,
 			);
 			path = StatusProvider;
 			sourceTree = "<group>";
@@ -98,6 +123,8 @@
 				F5EEEDCE1D6F1E1C002B9B36 /* StatusProvider Example */,
 				972645BA1EE017E6007D9C88 /* StatusProvider */,
 				F5EEEDCD1D6F1E1C002B9B36 /* Products */,
+				7E65089407AD60FB1E5A2B27 /* Pods */,
+				08A90101B8FDAB6313CF16FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +189,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5EEEDF41D6F1E1D002B9B36 /* Build configuration list for PBXNativeTarget "StatusProvider Example" */;
 			buildPhases = (
+				64976B6B2B43E80AAEC86951 /* [CP] Check Pods Manifest.lock */,
 				F5EEEDC81D6F1E1C002B9B36 /* Sources */,
 				F5EEEDC91D6F1E1C002B9B36 /* Frameworks */,
 				F5EEEDCA1D6F1E1C002B9B36 /* Resources */,
@@ -203,6 +231,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -237,6 +266,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		64976B6B2B43E80AAEC86951 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StatusProvider Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		972645B41EE017E5007D9C88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -244,6 +298,7 @@
 			files = (
 				972645DA1EE01904007D9C88 /* StatusProvider.swift in Sources */,
 				972645D91EE01904007D9C88 /* DefaultStatusView.swift in Sources */,
+				9563899B275CB99700E0C036 /* SimpleAvtivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +503,7 @@
 		};
 		F5EEEDF51D6F1E1D002B9B36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DB1BE470E215FFFD1EC3155 /* Pods-StatusProvider Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -463,6 +519,7 @@
 		};
 		F5EEEDF61D6F1E1D002B9B36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECA30D10314F5F218E0A109F /* Pods-StatusProvider Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
