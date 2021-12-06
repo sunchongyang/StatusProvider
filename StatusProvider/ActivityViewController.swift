@@ -12,6 +12,12 @@ import StatusProvider
 
 class ActivityViewController: UIViewController, StatusController {
     
+	override func loadView() {
+		super.loadView()
+		let theme = StatusTheme(titleColor: .green, descriptionColor: .red, actionTitleColor: .yellow)
+		StatusTheme.defaultTheme = theme
+	}
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,4 +28,16 @@ class ActivityViewController: UIViewController, StatusController {
         show(status: status)
     }
 
+	@IBAction func start(_ sender: Any) {
+		if let st = view.statusContainerView as? DefaultStatusView {
+			st.activityIndicatorView.startAnimating()
+		}
+	}
+	
+	@IBAction func stop(_ sender: Any) {
+		if let st = view.statusContainerView as? DefaultStatusView {
+			st.activityIndicatorView.stopAnimating()
+		}
+	}
+	
 }

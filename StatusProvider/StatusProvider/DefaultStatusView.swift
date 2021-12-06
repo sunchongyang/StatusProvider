@@ -15,7 +15,6 @@ open class DefaultStatusView: UIView, StatusView {
     
     public var status: StatusModel? {
         didSet {
-            
             guard let status = status else { return }
             
             imageView.image = status.image
@@ -41,50 +40,41 @@ open class DefaultStatusView: UIView, StatusView {
             verticalStackView.isHidden = imageView.isHidden && descriptionLabel.isHidden && actionButton.isHidden
         }
     }
+
+	public var statusTheme: StatusTheme = StatusTheme.defaultTheme {
+		didSet {
+			titleLabel.font = statusTheme.titleFont
+			titleLabel.textColor = statusTheme.titleColor
+			descriptionLabel.font = statusTheme.descriptionFont
+			descriptionLabel.textColor = statusTheme.descriptionColor
+			actionButton.setTitleColor(statusTheme.actionTitleColor, for: UIControl.State())
+			actionButton.titleLabel?.font = statusTheme.actionTitleFont
+			verticalStackView.spacing = statusTheme.itemsVerticalSpacing
+		}
+	}
     
     public let titleLabel: UILabel = {
-        $0.font = UIFont.preferredFont(forTextStyle: .headline)
-        $0.textColor = UIColor.black
+		$0.font = StatusTheme.defaultTheme.titleFont
+		$0.textColor = StatusTheme.defaultTheme.titleColor
         $0.textAlignment = .center
         
         return $0
     }(UILabel())
     
     public let descriptionLabel: UILabel = {
-        $0.font = UIFont.preferredFont(forTextStyle: .caption2)
-        $0.textColor = UIColor.black
+		$0.font = StatusTheme.defaultTheme.descriptionFont
+		$0.textColor = StatusTheme.defaultTheme.descriptionColor
         $0.textAlignment = .center
         $0.numberOfLines = 0
         
         return $0
     }(UILabel())
     
-    #if swift(>=4.2)
-    public let activityIndicatorView: UIActivityIndicatorView = {
+    public let activityIndicatorView: SimpleAvtivityIndicatorView = {
         $0.isHidden = true
         $0.hidesWhenStopped = true
-        #if os(tvOS)
-        $0.style = .whiteLarge
-        #endif
-        #if os(iOS)
-        $0.style = .gray
-        #endif
         return $0
-    }(UIActivityIndicatorView(style: .whiteLarge))
-    #else
-    public let activityIndicatorView: UIActivityIndicatorView = {
-        $0.isHidden = true
-        $0.hidesWhenStopped = true
-        #if os(tvOS)
-            $0.activityIndicatorViewStyle = .whiteLarge
-        #endif
-        
-        #if os(iOS)
-            $0.activityIndicatorViewStyle = .gray
-        #endif
-        return $0
-    }(UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge))
-    #endif
+	}(SimpleAvtivityIndicatorView(frame: .zero))
     
     public let imageView: UIImageView = {
         $0.contentMode = .center
@@ -93,13 +83,14 @@ open class DefaultStatusView: UIView, StatusView {
     }(UIImageView())
     
     public let actionButton: UIButton = {
-        
+		$0.setTitleColor(StatusTheme.defaultTheme.actionTitleColor, for: UIControl.State())
+		$0.titleLabel?.font = StatusTheme.defaultTheme.actionTitleFont
         return $0
     }(UIButton(type: .system))
 	
     public let verticalStackView: UIStackView = {
 		$0.axis = .vertical
-		$0.spacing = 10
+		$0.spacing = StatusTheme.defaultTheme.itemsVerticalSpacing
         $0.alignment = .center
 
 		return $0
@@ -121,9 +112,8 @@ open class DefaultStatusView: UIView, StatusView {
 		
         addSubview(horizontalStackView)
         
-        horizontalStackView.addArrangedSubview(activityIndicatorView)
         horizontalStackView.addArrangedSubview(verticalStackView)
-		
+		verticalStackView.addArrangedSubview(activityIndicatorView)
 		verticalStackView.addArrangedSubview(imageView)
 		verticalStackView.addArrangedSubview(titleLabel)
 		verticalStackView.addArrangedSubview(descriptionLabel)

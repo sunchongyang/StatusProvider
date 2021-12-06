@@ -7,6 +7,76 @@
 import Foundation
 import UIKit
 
+public protocol StatusThemeModel {
+	var titleColor: UIColor 			{ get }
+	var titleFont: UIFont 				{ get }
+	var descriptionColor: UIColor 		{ get }
+	var descriptionFont: UIFont 		{ get }
+	var actionTitleColor: UIColor? 	{ get }
+	var actionTitleFont: UIFont? 		{ get }
+	var itemsVerticalSpacing: CGFloat 	{ get }
+}
+
+extension StatusThemeModel {
+	public var titleColor: UIColor {
+		return .black
+	}
+	
+	public var titleFont: UIFont {
+		return UIFont.preferredFont(forTextStyle: .headline)
+	}
+	
+	public var descriptionColor: UIColor {
+		return .black
+	}
+	
+	public var descriptionFont: UIFont {
+		return UIFont.preferredFont(forTextStyle: .caption2)
+	}
+	
+	public var actionTitleColor: UIColor? {
+		return nil
+	}
+	
+	public var actionTitleFont: UIFont? {
+		return nil
+	}
+	
+	public var itemsVerticalSpacing: CGFloat {
+		return 10
+	}
+}
+
+public struct StatusTheme: StatusThemeModel {
+	public let titleColor: UIColor
+	public let titleFont: UIFont
+	public let descriptionColor: UIColor
+	public let descriptionFont: UIFont
+	public let actionTitleColor: UIColor?
+	public let actionTitleFont: UIFont?
+	public let itemsVerticalSpacing: CGFloat
+
+	public init(
+		titleColor: UIColor = UIColor(red: 0x20/255.0, green: 0x20/255.0, blue: 0x20/255.0, alpha: 1.0),
+		titleFont: UIFont = UIFont.preferredFont(forTextStyle: .headline),
+		descriptionColor: UIColor = UIColor(red: 0xC7/255.0, green: 0xC7/255.0, blue: 0xC7/255.0, alpha: 1.0),
+		descriptionFont: UIFont = UIFont.preferredFont(forTextStyle: .caption2),
+		actionTitleColor: UIColor? = nil,
+		actionTitleFont: UIFont? = nil,
+		itemsVerticalSpacing: CGFloat = 10
+		) {
+		self.titleColor = titleColor
+		self.titleFont = titleFont
+		self.descriptionColor = descriptionColor
+		self.descriptionFont = descriptionFont
+		self.actionTitleColor = actionTitleColor
+		self.actionTitleFont = actionTitleFont
+		self.itemsVerticalSpacing = itemsVerticalSpacing
+	}
+
+	public static var defaultTheme = StatusTheme()
+}
+
 public protocol StatusModel {
     var isLoading: Bool         { get }
     var title: String?          { get }
@@ -41,7 +111,6 @@ extension StatusModel {
     public var action: (() -> Void)? {
         return nil
     }
-    
 }
 
 public struct Status: StatusModel {
@@ -69,6 +138,7 @@ public struct Status: StatusModel {
 public protocol StatusView: class {
     var status: StatusModel?  { set get }
     var view: UIView { get }
+	var statusTheme: StatusTheme { set get }
 }
 
 public protocol StatusController {
@@ -140,6 +210,25 @@ extension StatusController where Self: UITableViewController {
         updateFocusIfNeeded()
         #endif
     }
+}
+
+extension StatusController where Self: UICollectionViewController {
+	
+	public var onView: StatusViewContainer {
+		if let backgroundView = collectionView.backgroundView {
+			return backgroundView
+		}
+		return view
+	}
+	
+	public func show(status: StatusModel) {
+		_show(status: status)
+		
+		#if os(tvOS)
+		setNeedsFocusUpdate()
+		updateFocusIfNeeded()
+		#endif
+	}
 }
 
 public protocol StatusViewContainer: class {
